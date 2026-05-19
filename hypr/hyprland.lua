@@ -33,6 +33,7 @@ local fileManager = "dolphin"
 local menu = "rofi -show window"
 local browser = "firefox"
 local editor = "nvim"
+local appLauncher = "hyprlauncher"
 
 -------------------
 ---- AUTOSTART ----
@@ -47,7 +48,8 @@ hl.on("hyprland.start", function()
 	-- hl.exec_cmd(terminal)
 	-- hl.exec_cmd("nm-applet")
 	-- hl.exec_cmd("waybar & hyprpaper & firefox")
-	hl.exec_cmd("hyprpaper")
+	hl.exec_cmd("waybar")
+	hl.exec_cmd("swww-daemon")
 end)
 
 -------------------------------
@@ -266,6 +268,8 @@ hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit")) -- dwindle only
 
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))
+
+hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(appLauncher))
 
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + left", hl.dsp.focus({ direction = "left" }))
