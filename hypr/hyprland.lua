@@ -30,8 +30,8 @@ hl.monitor({
 -- Set programs that you use
 local terminal = "foot"
 local fileManager = "dolphin"
-local menu = "rofi -show run"
-local browser = "firefox"
+local menu = "rofi -show drun -drun-categories '' -mdc ~/ .local/share/flatpak/exports/share/applications/"
+local browser = "firefox --safe-mode"
 local editor = "nvim"
 local appLauncher = "hyprlauncher"
 
@@ -48,8 +48,9 @@ hl.on("hyprland.start", function()
 	-- hl.exec_cmd(terminal)
 	-- hl.exec_cmd("nm-applet")
 	-- hl.exec_cmd("waybar & hyprpaper & firefox")
-	hl.exec_cmd("waybar")
-	hl.exec_cmd("swww-daemon")
+	hl.exec_cmd("waybar -c ~/Development/dotfiles/waybar/config.jsonc -s ~/Development/dotfiles/waybar/style.css")
+	hl.exec_cmd("~/.local/bin/awww-daemon")
+	hl.exec_cmd("~/.local/bin/awww img ~/Pictures/Wallpapers/geisha_original.png")
 end)
 
 -------------------------------
@@ -87,8 +88,8 @@ hl.env("EDITOR", editor)
 -- Refer to https://wiki.hypr.land/Configuring/Basics/Variables/
 hl.config({
 	general = {
-		gaps_in = 5,
-		gaps_out = 20,
+		gaps_in = 12,
+		gaps_out = 12,
 
 		border_size = 2,
 
@@ -254,7 +255,7 @@ hl.device({
 local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 
 -- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
-hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(terminal))
+hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd(terminal))
 local closeWindowBind = hl.bind(mainMod .. " + C", hl.dsp.window.close())
 -- closeWindowBind:set_enabled(false)
 hl.bind(
@@ -265,7 +266,9 @@ hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + Space", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
-hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit")) -- dwindle only
+hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))                      -- dwindle only
+
+hl.bind(mainMod .. " + U", hl.dsp.exec_cmd("flatpak run com.spotify.Client")) -- dwindle only
 
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))
 
@@ -361,11 +364,12 @@ hl.window_rule({
 })
 
 -- Layer rules also return a handle.
--- local overlayLayerRule = hl.layer_rule({
---     name  = "no-anim-overlay",
---     match = { namespace = "^my-overlay$" },
---     no_anim = true,
--- })
+local overlayLayerRule = hl.layer_rule({
+	name = "waybar-blur",
+	match = { namespace = "^waybar$" },
+
+	blur = false,
+})
 -- overlayLayerRule:set_enabled(false)
 
 -- Hyprland-run windowrule
