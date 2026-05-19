@@ -30,7 +30,7 @@ hl.monitor({
 -- Set programs that you use
 local terminal = "foot"
 local fileManager = "dolphin"
-local menu = "rofi -show window"
+local menu = "rofi -show run"
 local browser = "firefox"
 local editor = "nvim"
 local appLauncher = "hyprlauncher"
