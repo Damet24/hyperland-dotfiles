@@ -1,8 +1,10 @@
 {
     "position": "left",
     "layer": "top",
-    "margin": "10px",
     "width": 50,
+    "margin-left": 10,
+    "margin-top": 10,
+    "margin-bottom": 10,
     // Modules
     "modules-left": [
         "clock"
@@ -21,13 +23,7 @@
         "on-scroll-up": "hyprctl dispatch workspace r-1",
         "on-scroll-down": "hyprctl dispatch workspace r+1",
         "cursor": "pointer",
-        "format-icons": {
-            "1": " ",
-            "2": " ",
-            "3": " ",
-            "4": " ",
-            "5": " "
-        }
+        "format-icons": {}
     },
     "tray": {
         "orientation": "inherit",
@@ -68,7 +64,7 @@
         "format-icons": {
             "default": [
                 "",
-                ""
+                " "
             ]
         },
         "tooltip": false,

@@ -1,20 +1,29 @@
 * {
-    font-family: 'HackNerdFont';
-    font-size: 18px;
+    /*all: initial; Ignore gtk theme*/
+    /* border: none; */
+    border-radius: 10px;
+    font-family: "HackNerdFont", "Roboto", "Helvetica", "Arial", "sans-serif";
+    font-size: 17px;
+    min-height: 0;
+    padding: 1px;
+    /* opacity: 0.0; */
+    /* color: @colfg; */
 }
 
+
 window#waybar {
-    border-bottom: none;
+    background-color: rgba(30, 30, 46, 0.85);
+    border-radius: 14px;
     color: #ffffff;
+
     transition-property: background-color;
     transition-duration: .5s;
-    border-radius: 10px;
-    background-color: alpha(#1a1b26, 0.5);
 }
 
 window#waybar.hidden {
     opacity: 0.5;
 }
+
 
 /*
 window#waybar.empty {
