@@ -1,0 +1,5 @@
+hl.on("hyprland.start", function()
+	hl.exec_cmd("waybar -c ~/Development/dotfiles/waybar/config.jsonc -s ~/Development/dotfiles/waybar/style.css")
+	hl.exec_cmd("~/.local/bin/awww-daemon")
+	hl.exec_cmd("~/.local/bin/awww img ~/Pictures/Wallpapers/geisha_original.png")
+end)
