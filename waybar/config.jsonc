@@ -2,28 +2,40 @@
     "position": "left",
     "layer": "top",
     "width": 50,
-    "margin-left": 10,
-    "margin-top": 10,
-    "margin-bottom": 10,
+    // "margin-left": 10,
+    // "margin-top": 10,
+    // "margin-bottom": 10,
     // Modules
     "modules-left": [
+        "custom/home",
         "clock"
     ],
     "modules-center": [
         "hyprland/workspaces"
     ],
     "modules-right": [
-        "pulseaudio",
-        "network"
+        "group/system-info",
+        "group/group-power"
     ],
     // Modules Customization
     "hyprland/workspaces": {
         "format": "{icon}",
         "on-click": "activate",
-        "on-scroll-up": "hyprctl dispatch workspace r-1",
-        "on-scroll-down": "hyprctl dispatch workspace r+1",
-        "cursor": "pointer",
-        "format-icons": {}
+        "active-only": false,
+        "all-outputs": false,
+        "disable-scroll": false,
+        "format-icons": {
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": "",
+            "5": "",
+            "active": "",
+            "default": ""
+        },
+        "persistent-workspaces": {
+            "*": 5
+        }
     },
     "tray": {
         "orientation": "inherit",
@@ -52,6 +64,13 @@
         "tooltip-format-disconnected": "Disconnected",
         "max-length": 50
     },
+    "group/system-info": {
+        "orientation": "inherit",
+        "modules": [
+            "pulseaudio",
+            "network"
+        ]
+    },
     "custom/notifications": {
         "format": "<span size='12000'>󰂚</span>",
         "tooltip": false,
@@ -64,11 +83,56 @@
         "format-icons": {
             "default": [
                 "",
-                " "
+                ""
             ]
         },
         "tooltip": false,
         "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
         "on-click-right": "pavucontrol"
+    },
+    "cpu": {
+        "interval": 10,
+        "format": "{}%",
+        "max-length": 10
+    },
+    "group/group-power": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 500,
+            "children-class": "not-power",
+            "transition-left-to-right": false,
+            "start-expnaded": true
+        },
+        "modules": [
+            "custom/power",
+            "custom/quit",
+            "custom/lock",
+            "custom/reboot"
+        ]
+    },
+    "custom/quit": {
+        "format": "󰗼",
+        "tooltip": false,
+        "on-click": "hyprctl dispatch exit"
+    },
+    "custom/lock": {
+        "format": "󰍁",
+        "tooltip": false,
+        "on-click": "hyprlock"
+    },
+    "custom/reboot": {
+        "format": "󰜉",
+        "tooltip": false,
+        "on-click": "reboot"
+    },
+    "custom/power": {
+        "format": "",
+        "tooltip": false,
+        "on-click": "shutdown now"
+    },
+    "custom/home": {
+        "format": "󰣇",
+        "tooltip": "Fedora",
+        "on-click": "rofi -show drun -drun-categories '' -mdc ~/ .local/share/flatpak/exports/share/applications/"
     }
 }

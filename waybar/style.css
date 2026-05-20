@@ -1,7 +1,7 @@
 * {
     /*all: initial; Ignore gtk theme*/
     /* border: none; */
-    border-radius: 10px;
+    /* border-radius: 10px; */
     font-family: "HackNerdFont", "Roboto", "Helvetica", "Arial", "sans-serif";
     font-size: 17px;
     min-height: 0;
@@ -12,8 +12,8 @@
 
 
 window#waybar {
-    background-color: rgba(30, 30, 46, 0.85);
-    border-radius: 14px;
+    background-color: rgba(30, 30, 46, 1);
+    /* border-radius: 14px; */
     color: #ffffff;
 
     transition-property: background-color;
@@ -72,10 +72,6 @@ button:hover {
     color: #c0caf5;
 }
 
-#workspaces button:hover {}
-
-#workspaces button.focused {}
-
 #workspaces button.active {
     background-color: transparent;
     color: #f7768e;
@@ -99,14 +95,12 @@ button:hover {
 #disk,
 #temperature,
 #backlight,
-#pulseaudio,
 #wireplumber,
 #custom-media,
 #tray,
 #mode,
 #idle_inhibitor,
 #scratchpad,
-#network,
 #power-profiles-daemon,
 #mpd {
     background-color: #24283b;
@@ -190,14 +184,6 @@ label:focus {
     color: #000000;
 }
 
-#memory {}
-
-#disk {}
-
-#backlight {}
-
-#network {}
-
 #network.disconnected {
     background-color: #f53c3c;
 }
@@ -205,8 +191,6 @@ label:focus {
 #pulseaudio {
     color: #ff9e64;
 }
-
-#pulseaudio.muted {}
 
 #wireplumber {
     color: #000000;
@@ -229,13 +213,10 @@ label:focus {
     background-color: #ffa000;
 }
 
-#temperature {}
 
 #temperature.critical {
     background-color: #eb4d4b;
 }
-
-#tray {}
 
 #tray>.passive {
     -gtk-icon-effect: dim;
@@ -320,4 +301,21 @@ label:focus {
 
 #privacy-item.audio-out {
     background-color: #0069d4;
+}
+
+#group-power {
+    padding: 10px;
+    color: #f7768e;
+}
+
+#system-info {
+    padding: 10px;
+    background-color: #24283b;
+    border-radius: 10px;
+    margin: 4px;
+}
+
+#custom-home {
+    padding: 10px;
+    color: #7dcfff;
 }
