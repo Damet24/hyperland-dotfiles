@@ -4,7 +4,7 @@ hl.config({
 	general = {
 		gaps_in = 12,
 		gaps_out = 12,
-		border_size = 2,
+		border_size = 0,
 		col = {
 			active_border = { colors = { colors.red }, angle = 45 },
 			inactive_border = colors.bg_night,
@@ -18,18 +18,18 @@ hl.config({
 		rounding = 10,
 		rounding_power = 2,
 		active_opacity = 1.0,
-		inactive_opacity = 1.0,
+		inactive_opacity = 0.9,
 
 		shadow = {
 			enabled = true,
-			range = 4,
-			render_power = 3,
-			color = 0xee1a1a1a,
+			range = 20,
+			render_power = 4,
+			color = colors.bg_night,
 		},
 
 		blur = {
 			enabled = true,
-			size = 3,
+			size = 5,
 			passes = 1,
 			vibrancy = 0.1696,
 		},
@@ -51,8 +51,7 @@ hl.curve("easy", { type = "spring", mass = 1, stiffness = 71.2633, dampening = 1
 -- Animations
 hl.animation({ leaf = "global", enabled = true, speed = 10, bezier = "default" })
 hl.animation({ leaf = "border", enabled = true, speed = 5.39, bezier = "easeOutQuint" })
-hl.animation({ leaf = "windowsIn", enabled = true, speed = 4.1, spring = "easy", style = "slide left" })
-hl.animation({ leaf = "windowsOut", enabled = true, speed = 1.49, bezier = "linear", style = "slide right" })
+hl.animation({ leaf = "windows", enabled = true, speed = 7, bezier = "quick" })
 hl.animation({ leaf = "fadeIn", enabled = true, speed = 1.73, bezier = "almostLinear" })
 hl.animation({ leaf = "fadeOut", enabled = true, speed = 1.46, bezier = "almostLinear" })
 hl.animation({ leaf = "fade", enabled = true, speed = 3.03, bezier = "quick" })
