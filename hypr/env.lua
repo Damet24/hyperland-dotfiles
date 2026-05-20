@@ -2,7 +2,6 @@ local programs = require("programs")
 
 hl.env("XCURSOR_THEME", "Sweet-cursors")
 hl.env("XCURSOR_SIZE", "20")
-hl.env("HYPRCURSOR_SIZE", "20")
 hl.env("EDITOR", programs.editor)
 
 -- Firefox / VAAPI
