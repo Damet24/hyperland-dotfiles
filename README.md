@@ -61,12 +61,7 @@ Esquema **Tokyo Night** basado en [`hypr/colors.lua`](hypr/colors.lua).
 ```bash
 git clone https://github.com/Damet24/hyperland-dotfiles.git
 cd hyperland-dotfiles
-
-# Crear enlaces simbólicos (ajusta las rutas según tu sistema)
-ln -sf $(pwd)/hypr ~/.config/hypr
-ln -sf $(pwd)/waybar ~/.config/waybar
-ln -sf $(pwd)/foot ~/.config/foot
-ln -sf $(pwd)/rofi ~/.config/rofi
+./install.sh
 ```
 
 ## Licencia
