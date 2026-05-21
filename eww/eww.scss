@@ -1,0 +1,195 @@
+* {
+  all: unset;
+  font-family: feather;
+  font-family: HackNerdFont;
+}
+
+
+/** tooltip!! **/
+tooltip.background {
+  background-color: #0f0f17;
+  font-size: 18;
+  border-radius: 10px;
+  color: #bfc9db;
+}
+
+tooltip label {
+  margin: 6px;
+}
+
+.bg {
+  background-color: #1a1b26;
+  border-radius: 20px;
+}
+
+.win {
+  background-color: #24283b;
+  border-radius: 18px;
+  padding: 10px 20px;
+  margin: 10px;
+}
+
+.profile_picture {
+  background-image: url('images/profile.png');
+  background-size: 90px;
+  background-position: 50% 35%;
+  min-height: 90px;
+  min-width: 90px;
+  margin: 10px;
+  border-radius: 50%;
+  border: 2px solid #24283b;
+}
+
+.profile_greeting {
+  color: #b5e8e0;
+  font-size: 18px;
+  font-weight: normal;
+  margin: 0px 0px 0px 10px;
+}
+
+.profile_username {
+  color: #a1bdce;
+  font-size: 36px;
+  font-weight: bold;
+  margin: -15px 0px 0px 0px;
+}
+
+// ===================== TIME ==========================
+.hour_class {
+  color: #bec8da;
+  font-size: 45px;
+  font-weight: bold;
+  margin: 0px 0px 0px 20px;
+}
+
+.minute_class {
+  color: #bec8da;
+  font-size: 45px;
+  margin: 0px 10px 0px 20px;
+}
+
+.time_sep_class {
+  color: #565f89;
+  font-size: 18px;
+}
+
+.time_day_class_n {
+  color: #565f89;
+  font-size: 18px;
+  margin: 0px 10px 0px 0px;
+}
+
+.day_class_n {
+  color: #565f89;
+  font-size: 18px;
+}
+
+.month_class_n {
+  color: #565f89;
+  font-size: 18px;
+}
+
+// =====================================================
+
+// ============================== MUsic ================
+.music_card {
+  background: #24283b;
+  border-radius: 12px;
+  padding: 0;
+  color: #a9b1d6;
+  margin: 0 10px 0 10px;
+}
+
+/* COVER */
+.music_top {
+  border-radius: 12px 12px 0 0;
+
+  background-image: url("images/music_cover.png");
+  background-size: cover;
+  background-position: center;
+  box-shadow: inset 0px 0px 5px 2px #000000;
+
+  padding: 10px;
+}
+
+/* TEXT */
+.song_title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #c0caf5;
+}
+
+.song_artist {
+  font-size: 14px;
+  color: #c0caf5;
+  margin-top: 4px;
+}
+
+/* CONTROLS */
+.music_controls {
+  padding: 18px;
+}
+
+/* BUTTON ROW */
+.controls_row {
+  padding: 10px;
+}
+
+/* BUTTONS */
+.control_btn {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 999px;
+
+  min-width: 20px;
+  min-height: 20px;
+
+  font-size: 18px;
+  color: #c0caf5;
+
+  transition: 180ms ease;
+}
+
+.button_container {
+  margin: 5px;
+}
+
+.control_btn:hover {
+  background: rgba(255, 255, 255, 0.14);
+  color: white;
+}
+
+.play_btn {
+  background: #bb9af7;
+  min-width: 54px;
+  min-height: 54px;
+  font-size: 22px;
+}
+
+.play_btn:hover {
+  background: #bb9af7;
+}
+
+.loop_btn {
+  font-size: 16px;
+}
+
+/* SLIDER */
+.music_progress trough {
+  min-height: 8px;
+  min-width: 300px;
+
+  background: #414868;
+  border-radius: 999px;
+}
+
+.music_progress highlight {
+  background: #bb9af7;
+  border-radius: 999px;
+}
+
+.music_progress slider {
+  background: #ffffff;
+  border-radius: 999px;
+  min-width: 12px;
+  min-height: 12px;
+}
