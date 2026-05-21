@@ -24,7 +24,7 @@ hl.config({
 			enabled = true,
 			range = 20,
 			render_power = 4,
-			color = "rgba(1a1a1aaf)",
+			color = "rgba(0,0,0,0.92)",
 		},
 
 		blur = {
@@ -60,7 +60,7 @@ hl.animation({ leaf = "layersIn", enabled = true, speed = 4, bezier = "easeOutQu
 hl.animation({ leaf = "layersOut", enabled = true, speed = 1.5, bezier = "linear", style = "fade" })
 hl.animation({ leaf = "fadeLayersIn", enabled = true, speed = 1.79, bezier = "almostLinear" })
 hl.animation({ leaf = "fadeLayersOut", enabled = true, speed = 1.39, bezier = "almostLinear" })
-hl.animation({ leaf = "workspaces", enabled = true, speed = 2, bezier = "almostLinear", style = "slidevert" })
+hl.animation({ leaf = "workspaces", enabled = true, speed = 2, bezier = "almostLinear", style = "slide" })
 hl.animation({ leaf = "zoomFactor", enabled = true, speed = 7, bezier = "quick" })
 
 -- Layouts
