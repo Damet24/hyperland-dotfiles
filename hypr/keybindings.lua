@@ -11,12 +11,21 @@ hl.bind(
 	hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'")
 )
 hl.bind(mainMod .. " + Escape", hl.dsp.exec_cmd("hyprlock"))
+
+hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("hyprshot -m region"))
+hl.bind(mainMod .. " + ALT + Space", hl.dsp.exec_cmd("~/.config/eww/launch_left"))
+
 hl.bind(mainMod .. " + F", hl.dsp.exec_cmd(programs.fileManager))
+
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
+hl.bind("SUPER + SHIFT + F", function()
+	os.execute("hyprctl clients -j | jq -r '.[].address' | xargs -I {} hyprctl dispatch setfloating {}")
+end)
+
 hl.bind(mainMod .. " + Space", hl.dsp.exec_cmd(programs.menu))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))
-hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("flatpak run com.spotify.Client"))
+hl.bind(mainMod .. " + L", hl.dsp.exec_cmd(programs.spotify))
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(programs.browser))
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(programs.appLauncher))
 
@@ -34,8 +43,8 @@ for i = 1, 10 do
 end
 
 -- Scratchpad
-hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special("magic"))
-hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
+-- hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special("magic"))
+-- hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
 
 -- Scroll workspaces
 hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))

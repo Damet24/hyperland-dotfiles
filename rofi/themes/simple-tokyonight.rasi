@@ -1,115 +1,100 @@
 * {
-  font:   "Iosevka Nerd Font Medium 11";
+  font: "HackNerdFont Medium 11";
 
-  bg0     : #1a1b26;
-  bg1     : #1f2335;
-  bg2     : #24283b;
-  bg3     : #414868;
-  fg0     : #c0caf5;
-  fg1     : #a9b1d6;
-  fg2     : #737aa2;
-  red     : #f7768e;
-  green   : #9ece6a;
-  yellow  : #e0af68;
-  blue    : #7aa2f7;
-  magenta : #9a7ecc;
-  cyan    : #4abaaf;
+  bg     : #1a1b26;
+  bg2    : #24283b;
+  fg     : #a9b1d6;
 
-  accent: @red;
-  urgent: @yellow;
+  red    : #f7768e;
+  yellow : #e0af68;
+  blue   : #7aa2f7;
+  cyan   : #2ac3de;
+  gold   : #bb9af7;
 
-  background-color : transparent;
-  text-color       : @fg0;
+  accent : @red;
+  urgent : @yellow;
 
-  margin  : 0;
-  padding : 0;
-  spacing : 0;
+  background-color: transparent;
+  text-color: @fg;
 }
 
-element-icon, element-text, scrollbar {
-  cursor: pointer;
-}
-
+/* ===== Window (más tipo Waybar container) ===== */
 window {
-  location : center;
-  width    : 280px;
-  x-offset : 4px;
-  y-offset : 26px;
+  width: 320px;
+  location: center;
 
-  background-color: @bg1;
-  border: 1px;
-  border-color: @bg3;
-  border-radius: 6px;
+  background-color: @bg;
+  border: 1px solid @bg2;
+  border-radius: 4px;
 }
 
+/* ===== Input bar (como módulo superior) ===== */
 inputbar {
-  spacing  : 8px;
-  padding  : 4px 8px;
-  children : [ icon-search, entry ];
+  padding: 8px;
+  spacing: 8px;
 
-  background-color: @bg0;
+  background-color: @bg2;
+  border-bottom: 1px solid @bg2;
 }
 
-icon-search, entry, element-icon, element-text {
-  vertical-align: 0.5;
+entry {
+  background-color: transparent;
+  text-color: @fg;
+  padding: 6px;
+  border-radius: 2px;
 }
 
 icon-search {
-  expand   : false;
-  filename : "search-symbolic";
-  size     : 14px;
+  size: 14px;
+  color: @blue;
 }
 
-textbox {
-  padding          : 4px 8px;
-  background-color : @bg2;
-}
-
+/* ===== List ===== */
 listview {
-  padding      : 4px 0px;
-  lines        : 12;
-  columns      : 1;
-  scrollbar    : true;
-  fixed-height : false;
-  dynamic      : true;
+  padding: 6px 0px;
+  spacing: 2px;
+  background-color: @bg;
 }
 
+/* ===== Items estilo “button de Waybar” ===== */
 element {
-  padding : 4px 8px;
-  spacing : 8px;
+  padding: 6px 10px;
+  border-radius: 2px;
+  background-color: transparent;
+}
+
+element:hover {
+  background-color: @bg2;
+}
+
+/* ===== Selección = equivalente a workspace active ===== */
+element selected {
+  background-color: @accent;
+  text-color: @bg;
+}
+
+/* ===== Urgente ===== */
+element selected urgent {
+  background-color: @yellow;
+  text-color: @bg;
 }
 
 element normal urgent {
-  text-color: @urgent;
+  text-color: @yellow;
 }
 
-element normal active {
-  text-color: @accent;
-}
-
-element alternate active {
-  text-color: @accent;
-}
-
-element selected {
-  text-color       : @bg1;
-  background-color : @accent;
-}
-
-element selected urgent {
-  background-color: @urgent;
-}
-
+/* ===== Icono/texto ===== */
 element-icon {
-  size: 0.8em;
+  size: 0.85em;
 }
 
 element-text {
   text-color: inherit;
 }
 
+/* ===== Scrollbar más discreto tipo Waybar ===== */
 scrollbar {
-  handle-width : 4px;
-  handle-color : @fg2;
-  padding      : 0 4px;
+  handle-width: 4px;
+  handle-color: @bg2;
+  padding: 0 4px;
 }

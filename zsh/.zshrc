@@ -3,8 +3,6 @@
 
 export ZSH="$HOME/.oh-my-zsh"
 
-ZSH_THEME="agnosterzak"
-
 plugins=( 
     git
     dnf
@@ -25,9 +23,6 @@ eval "$(starship init zsh)"
 
 # fastfetch. Will be disabled if above colorscript was chosen to install
 #fastfetch -c $HOME/.config/fastfetch/config-compact.jsonc
-
-# Set-up FZF key bindings (CTRL R for fuzzy history finder)
-source <(fzf --zsh)
 
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
@@ -67,8 +62,7 @@ if [ -d ~/.bashrc.d ]; then
 fi
 unset rc
 . "$HOME/.cargo/env"
-export MOZ_ENABLE_WAYLAND=1
-export MOZ_ENABLE_WAYLAND=1
+
 export MOZ_ENABLE_WAYLAND=1
 
 # opencode

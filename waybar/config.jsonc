@@ -1,7 +1,7 @@
 {
     "exclusive": true,
     "reload_style_on_change": true,
-    "position": "top",
+    "position": "bottom",
     "mod": "dock",
     "passthrough": false,
     "gtk-layer-shell": true,
@@ -85,7 +85,7 @@
     },
     "custom/omarchy": {
         "format": "⻯",
-        "on-click": "omarchy-menu system",
+        "on-click": "~/.config/eww/launch_left",
         "on-click-right": "xdg-terminal-exec",
         "tooltip-format": "System menu\n\nSuper + Space"
     },
@@ -262,7 +262,7 @@
     "mpris": {
         "format": "  {dynamic}",
         "format-paused": " {status_icon} {dynamic}",
-        "interval": 5,
+        "interval": 1,
         "dynamic-order": [
             "artist",
             "position",

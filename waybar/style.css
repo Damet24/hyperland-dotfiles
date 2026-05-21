@@ -3,9 +3,11 @@
 @define-color fg #a9b1d6;
 @define-color red #f7768e;
 @define-color accent #414868;
+@define-color yellow #e0af68;
 @define-color gold #bb9af7;
 @define-color muted #24283b;
 @define-color blue #7aa2f7;
+@define-color cyan #2ac3de;
 
 * {
     font-family: "HackNerdFont";
@@ -147,7 +149,7 @@ button:hover {
 
 #custom-omarchy {
     color: @bg;
-    background-color: @red;
+    background-color: @cyan;
     font-size: 16px;
     padding: 0 12px;
 }
@@ -303,7 +305,7 @@ tooltip label {
 }
 
 #mpris.playing {
-    background-color: @gold;
+    background-color: @yellow;
 }
 
 #mpris.paused {
