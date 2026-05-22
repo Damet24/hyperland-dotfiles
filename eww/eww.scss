@@ -104,8 +104,9 @@ tooltip label {
   border-radius: 12px 12px 0 0;
   background-size: cover;
   background-position: center;
-  box-shadow: inset 0px 0px 5px 2px #000000;
+  box-shadow: inset 0px 0px 15px 2px #000000;
   padding: 10px;
+  min-height: 110px;
 }
 
 /* TEXT */
@@ -227,7 +228,7 @@ tooltip label {
 
 // Osd's
 .osd {
-  background: rgba(26, 27, 38, 0.88);
+  background: rgba(26, 27, 38, 1.0);
   border-radius: 4px;
   padding: 9px;
 }
@@ -245,11 +246,11 @@ tooltip label {
 
 .osd_scale trough {
   min-height: 10px;
-  border-radius: 999px;
+  border-radius: 4px;
   background: #24283b;
 }
 
 .osd_scale highlight {
   background: #bb9af7;
-  border-radius: 999px;
+  border-radius: 4px;
 }

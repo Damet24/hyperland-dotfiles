@@ -18,8 +18,9 @@ Basada en **Arch Linux**, usando **Colemak** como distribución de teclado.
 | Compositor | [Hyprland](https://hyprland.org/) | `hypr/hyprland.lua` |
 | Barra de estado | [Waybar](https://github.com/Alexays/Waybar) | `waybar/` |
 | Terminal | [Foot](https://codeberg.org/dnkl/foot) | `foot/foot.ini` |
-| Lanzador | [Rofi](https://github.com/davatorium/rofi) | `rofi/themes/simple-tokyonight.rasi` |
 | Wallpaper | [hyprpaper](https://github.com/hyprwm/hyprpaper) | `hypr/hyprpaper.conf` |
+| Widgets | [Eww](https://github.com/elkowar/eww)| `eww/`
+| Notifications | [End-rs](https://github.com/Dr-42/end-rs) | `end-rs/`
 
 ## Atajos de teclado
 
