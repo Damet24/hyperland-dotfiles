@@ -99,6 +99,30 @@ get_cover() {
 }
 
 ## =========================
+## COVER (SPOTIFY - descarga local)
+## =========================
+get_spotify_cover() {
+    cover_url="$(playerctl metadata mpris:artUrl 2>/dev/null)"
+
+    if [[ -z "$cover_url" ]]; then
+        echo "images/music.png"
+        return
+    fi
+
+    if [[ "$cover_url" == file://* ]]; then
+        echo "${cover_url#file://}"
+        return
+    fi
+
+    curl -sL "$cover_url" -o "$COVER" 2>/dev/null
+    if [[ -f "$COVER" ]]; then
+        echo "$COVER"
+    else
+        echo "images/music.png"
+    fi
+}
+
+## =========================
 ## LOOP STATUS
 ## =========================
 loop_st() {
@@ -134,6 +158,9 @@ elif [[ "$1" == "--ttime" ]]; then
 
 elif [[ "$1" == "--cover" ]]; then
     get_cover
+
+elif [[ "$1" == "--spotify-cover" ]]; then
+    get_spotify_cover
 
 elif [[ "$1" == "--toggle" ]]; then
     playerctl play-pause

@@ -151,6 +151,7 @@ tooltip label {
 
 .button_container {
   margin: 5px;
+  font-size: 22px;
 }
 
 .control_btn:hover {
@@ -158,24 +159,9 @@ tooltip label {
   color: white;
 }
 
-.play_btn {
-  background: #bb9af7;
-  min-width: 54px;
-  min-height: 54px;
-  font-size: 22px;
-}
-
-.play_btn:hover {
-  background: #bb9af7;
-}
-
-.loop_btn {
-  font-size: 16px;
-}
-
 /* SLIDER */
 .music_progress trough {
-  min-height: 8px;
+  min-height: 4px;
   min-width: 300px;
 
   background: #414868;
@@ -191,5 +177,48 @@ tooltip label {
   background: #ffffff;
   border-radius: 999px;
   min-width: 12px;
-  min-height: 12px;
+  min-height: 6px;
+}
+
+
+
+
+
+
+.audio_panel {
+  background-color: #24283b;
+  border-radius: 12px;
+  padding: 0;
+  color: #a9b1d6;
+  margin: 0 10px 0 10px;
+}
+
+.audio_panel trough {
+  min-height: 4px;
+  min-width: 300px;
+
+  background: #414868;
+  border-radius: 999px;
+}
+
+.volume_bar highlight {
+  background: #f7768e;
+  border-radius: 999px;
+}
+
+.mic_bar highlight {
+  background: #9ece6a;
+  border-radius: 999px;
+}
+
+.audio_panel slider {
+  background: #ffffff;
+  border-radius: 999px;
+  min-width: 12px;
+  min-height: 6px;
+}
+
+.sliders {
+  font-size: 18px;
+  padding: 15px 0 15px 0;
 }

@@ -25,6 +25,7 @@
 (defpoll song_status :interval "1s"  "~/.config/eww/scripts/music_info --status")
 (defpoll loop_status :interval "1s"  "~/.config/eww/scripts/music_info --loop_ic")
 (defpoll song_time :interval "1s"  "~/.config/eww/scripts/music_info --time")
+(defpoll song_cover :interval "1s"  "~/.config/eww/scripts/music_info --spotify-cover")
 
 (defpoll battery :interval "15s" "./scripts/battery --bat")
 (defpoll memory :interval "15s" "scripts/memory")
@@ -44,7 +45,7 @@
 (defpoll vol_col :interval "15s" "scripts/vol vol_col")
 (defpoll vol_bg :interval "17s" "scripts/vol vol_bg")
 
-(defpoll volume_percent :interval "6s" "amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'")
+(defpoll volume_percent :interval "6s" "pamixer  --get-volume")
 (defpoll mic_percent :interval "6s" "amixer -D pulse sget Capture | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'")
 (defpoll brightness :interval "6s" "brightnessctl -m -d intel_backlight | awk -F, '{print substr($4, 0, length($4)-1)}' | tr -d '%'")
 
@@ -87,6 +88,16 @@
       :valign "start"
 
       (music)
+    )
+
+    (box
+      :orientation "v"
+      :spacing 0
+      :space-evenly "false"
+      :halign "fill"
+      :valign "start"
+
+      (audio)
     )
   ))
 
@@ -149,6 +160,7 @@
     ;; COVER
     (box
       :class "music_top"
+      :style (strcat "background-image: url('" song_cover "');")
       :orientation "v"
       :valign "end"
       :halign "fill"
@@ -192,3 +204,14 @@
         :value song_time
         :value-pos "right")
     )))
+
+
+		(defwidget audio []
+			(box :vexpand "false" :hexpand "true" :class "audio_panel" :valign "center" :halign "fill"
+				(box :class "sliders" :orientation "v" :spacing 25 :halign "center" :valign "center" :space-evenly "false" :vexpand "false" :hexpand "false"
+					(box :class "volume_bar" :orientation "h" :spacing 10 :space-evenly "false" :vexpand "false" :hexpand "true"
+                            (scale :flipped "false" :orientation "h" :min 0 :max 101 :value volume_percent :onchange "pamixer --set-volume {}" )
+                            (label  :text "" :class "vol_icon"))
+					(box :class "mic_bar" :orientation "h" :spacing 10 :space-evenly "false" :vexpand "false" :hexpand "false"
+                            (scale :flipped "false" :orientation "h" :min 0 :max 101 :value mic_percent :active "false")
+                            (label  :text "" :class "mic_icon")))))
