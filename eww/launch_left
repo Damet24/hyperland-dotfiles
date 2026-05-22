@@ -8,29 +8,51 @@ main
 pfp
 "
 
+anim_restore_pid=""
+
+set_anim_slide() {
+	hyprctl eval "hl.animation({ leaf = 'layersIn', enabled = true, speed = 4, bezier = 'easeOutQuint', style = 'slidevert' })" 2>/dev/null
+	hyprctl eval "hl.animation({ leaf = 'layersOut', enabled = true, speed = 1.5, bezier = 'linear', style = 'slidevert' })" 2>/dev/null
+}
+
+restore_anim_fade() {
+	hyprctl eval "hl.animation({ leaf = 'layersIn', enabled = true, speed = 4, bezier = 'easeOutQuint', style = 'fade' })" 2>/dev/null
+	hyprctl eval "hl.animation({ leaf = 'layersOut', enabled = true, speed = 1.5, bezier = 'linear', style = 'fade' })" 2>/dev/null
+}
+
+schedule_restore() {
+	[[ -n "$anim_restore_pid" ]] && kill "$anim_restore_pid" 2>/dev/null || true
+	(sleep 0.5 && restore_anim_fade) &
+	anim_restore_pid=$!
+}
+
 ## Start daemon if not running
 if ! pidof eww >/dev/null; then
-    $EWW daemon
-    sleep 1
+	$EWW daemon
+	sleep 1
 fi
 
 run_eww() {
-    for win in $w_ls; do
-        $EWW open "$win" --screen 0
-    done
+	set_anim_slide
+	for win in $w_ls; do
+		$EWW open "$win" --screen 0
+	done
+	schedule_restore
 }
 
 close_eww() {
-    for win in $w_ls; do
-        $EWW close "$win"
-    done
+	set_anim_slide
+	for win in $w_ls; do
+		$EWW close "$win"
+	done
+	schedule_restore
 }
 
 ## Toggle logic
 if [[ ! -f "$FILE" ]]; then
-    touch "$FILE"
-    run_eww
+	touch "$FILE"
+	run_eww
 else
-    close_eww
-    rm "$FILE"
+	close_eww
+	rm "$FILE"
 fi

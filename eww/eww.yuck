@@ -1,4 +1,4 @@
-(defvar IMAGE "~/.config/eww/images/profile.png")
+(defvar IMAGE "~/.config/eww/images/profile.jpeg")
 (defpoll username :interval "48h"  "whoami")
 
 (defpoll uptime :interval "50s" "uptime -p | sed -e 's/up //;s/ hours,/h/;s/ hour,/h/;s/ minutes/m/;s/ minute/m/'")
