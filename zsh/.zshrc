@@ -35,6 +35,7 @@ alias l='ls -l'
 alias la='ls -a'
 alias lla='ls -la'
 alias lt='ls --tree'
+alias dtem='cd $(mktemp -d)'
 
 # fnm
 FNM_PATH="/home/damet/.local/share/fnm"
