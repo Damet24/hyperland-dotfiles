@@ -13,7 +13,7 @@ hl.bind(
 hl.bind(mainMod .. " + Escape", hl.dsp.exec_cmd("hyprlock"))
 
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("hyprshot -m region"))
-hl.bind(mainMod .. " + ALT + Space", hl.dsp.exec_cmd("~/.config/eww/launch_left"))
+hl.bind(mainMod .. " + SUPER_L", hl.dsp.exec_cmd("~/.config/eww/launch_left"))
 
 hl.bind(mainMod .. " + F", hl.dsp.exec_cmd(programs.fileManager))
 
