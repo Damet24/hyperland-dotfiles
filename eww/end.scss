@@ -1,130 +1,105 @@
-$bar_bg: #282c34;
-$bar_fg: #abb2bf;
-$bar_border: #3b4048;
-$reply_hover: #3b4048;
-$hourcolor: #ff0000;
-
-.end-default-notification-box-low {
-    background-color: $bar_bg;
-    padding: 12px;
-    padding-left: 8px;
-    margin: 12px;
-    border-radius: 10px;
-    border: 1px dashed blue;
-}
-
-.end-default-notification-box-normal {
-    background-color: $bar_bg;
-    padding: 12px;
-    padding-left: 8px;
-    margin: 12px;
-    border-radius: 10px;
-}
-
+.end-default-notification-box-low,
+.end-default-notification-box-normal,
 .end-default-notification-box-critical {
-    background-color: $bar_bg;
-    padding: 12px;
-    padding-left: 8px;
-    margin: 12px;
-    border-radius: 10px;
-    border: 2px solid #ff0000;
-}
+    background-color: #1a1b26;
 
-.end-default-notification-title-bar {
-    background-color: $bar_bg;
-    margin: 3px;
-    border-bottom: 1px solid $bar_border;
+    padding: 10px 12px;
+    margin: 4px 0;
+
+    border-radius: 8px;
+    border: none;
 }
 
 .end-default-notification-appicon {
-    margin-right: 10px;
-    margin-bottom: 5px;
+    margin-right: 8px;
 }
 
 .end-default-notification-appname {
-    color: $bar_fg;
+    color: #c0caf5;
     margin-right: 12px;
     font-family: 'JetBrainsMono Nerd Font';
     font-weight: bold;
-    font-size: 15px;
+    font-size: 13px;
 }
 
 .end-default-notification-body-box {
-    margin-top: 12px;
+    margin-top: 6px;
+}
+
+.end-default-notification-title-bar {
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
 }
 
 .notification-text {
-    color: $bar_fg;
+    color: #c0caf5;
     font-family: 'JetBrainsMono Nerd Font';
 }
 
 .notification-title {
-    font-weight: bold;
-    font-size: 1em;
+    font-size: 0.9em;
+    font-weight: 600;
+    margin-bottom: 2px;
 }
 
 .notification-content {
-    font-size: .8em;
+    font-size: 0.78em;
+}
+
+.content-box {
+    margin-left: 6px;
 }
 
 .end-notification-buttons {
-    margin-top: 12px;
+    margin-top: 8px;
 }
 
 .end-notification-button {
-    background-color: $bar_bg;
-    color: $bar_fg;
-    padding: 8px;
-    border-radius: 10px;
-    margin-right: 12px;
-    border: 1px solid $bar_border;
-}
+    background-color: transparent;
+    color: #7aa2f7;
 
-.end-notification-reply {
-    background-color: $bar_bg;
-    color: $bar_fg;
-    padding: 8px;
-    border-radius: 10px;
-    margin-right: 12px;
-    border: 1px solid $bar_border;
-}
+    padding: 4px 8px;
+    border-radius: 6px;
 
-.end-notification-reply:hover:focus {
-    background-color: $bar_fg;
-    color: $hourcolor;
-    padding: 8px;
-    border-radius: 10px;
-    margin-right: 12px;
-    border: 1px solid $bar_border;
+    font-size: 0.75em;
+
+    border: none;
 }
 
 .end-notification-button:hover {
-    background-color: $bar_fg;
-    color: $bar_bg;
-    padding: 8px;
-    border-radius: 10px;
-    margin-right: 12px;
-    border: 1px solid $bar_border;
+    background-color: rgba(122, 162, 247, 0.12);
 }
 
-.end-history-frame {
-    background-color: $bar_bg;
-    padding: 12px;
-    padding-left: 8px;
-    border-radius: 10px;
+.end-notification-reply {
+    background-color: #414868;
+    color: #c0caf5;
+    padding: 6px 8px;
+    border-radius: 6px;
+    margin-right: 8px;
+    font-size: 0.85em;
+}
+
+.end-notification-reply:hover:focus {
+    background-color: #565f89;
+    color: #c0caf5;
+    padding: 6px 8px;
+    border-radius: 6px;
+    margin-right: 8px;
 }
 
 .end-history-box {
-    background-color: $bar_bg;
-    padding: 12px;
-    padding-left: 8px;
-    border: 1px solid $bar_border;
+    background-color: #1a1b26;
+    padding: 10px;
+    border-radius: 8px;
+    margin: 4px 0;
+    border: none;
 }
 
 .end-history-title-bar {
-    background-color: $bar_bg;
-    margin: 1px;
-    border-bottom: 1px solid $bar_border;
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
 }
 
 .end-history-appicon {
@@ -133,17 +108,24 @@ $hourcolor: #ff0000;
 }
 
 .end-history-appname {
-    color: $bar_fg;
+    color: #c0caf5;
     margin-right: 5px;
     font-family: 'JetBrainsMono Nerd Font';
     font-weight: bold;
-    font-size: 10px;
+    font-size: 9px;
 }
 
 .end-history-body-box {
-    margin-top: 3px;
+    margin-top: 4px;
 }
 
-.content-box {
-    margin-left: 12px;
+.end-notification-frame {
+    background-color: #000000;
+    border-radius: 8px;
+    padding: 4px;
+}
+
+.end-history-frame {
+    background-color: #1a1b26;
+    padding: 0;
 }

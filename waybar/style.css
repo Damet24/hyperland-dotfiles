@@ -138,7 +138,8 @@ button:hover {
 #custom-screenrecording-indicator,
 #custom-screenrecording-indicator.active,
 #custom-update,
-#custom-omarchy {
+#custom-omarchy,
+#custom-end-history {
     color: @bg;
     background: alpha(@accent, 1);
     opacity: 1;
@@ -152,6 +153,19 @@ button:hover {
     background-color: @cyan;
     font-size: 16px;
     padding: 0 12px;
+}
+
+#custom-end-history {
+    color: @bg;
+    background-color: @blue;
+    font-size: 14px;
+    padding: 0 10px;
+    margin: 2px 1px;
+    border-radius: 2px;
+}
+
+#custom-end-history:hover {
+    background-color: alpha(@blue, 0.8);
 }
 
 

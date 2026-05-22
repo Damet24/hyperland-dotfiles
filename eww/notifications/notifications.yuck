@@ -1,5 +1,5 @@
 ;; Notifications
-(defvar end-binary "./bin/end-rs") 
+(defvar end-binary "~/.local/bin/end-rs") 
 (defvar end-notifications '')
 (defvar end-histories '')
 (defvar end-replies '')

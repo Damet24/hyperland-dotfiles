@@ -1,5 +1,5 @@
 ;; Notifications
-(defvar end-binary "~/.cargo/bin/end-rs") 
+(defvar end-binary ".cargo/bin/end-rs") 
 (defvar end-notifications '')
 (defvar end-histories '')
 (defvar end-replies '')
@@ -8,12 +8,13 @@
 
 (defwindow notification-frame
   :monitor 0
+  :class "end-notification-frame"
   :geometry (geometry 
-    :x "0px"
+    :x "12px"
     :y "0px"
     :width "480px"
     :height "0px"
-    :anchor "top right")
+    :anchor "center right")
   :stacking "fg"
   :windowtype "dialog"
   :passthrough true
@@ -24,11 +25,11 @@
   :monitor 0
   :class "end-history-frame"
   :geometry (geometry 
-   :x "0px"
+   :x "12px"
    :y "0px"
    :width "480px"
-   :height "150px"
-   :anchor "top right")
+   :height "70%"
+   :anchor "center right")
   :stacking "fg"
   :windowtype "dialog"
   :passthrough true

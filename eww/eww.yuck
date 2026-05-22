@@ -59,7 +59,6 @@
   :interval "6s"
   "sh -c \"pamixer --source \\$(pamixer --list-sources | grep 'alsa_input.*HyperX' | awk '{print \\$1}') --get-volume\"")
 
-(include "./notifications/notifications.yuck")
 
 (defwindow main
   :geometry (geometry
@@ -136,8 +135,9 @@
   ))
 
 (defwidget profile []
-  (box :class "profile_container" :orientation "v" :spacing 0 :space-evenly "false" :vexpand "false" :hexpand "false" 
-				(box :class "profile_picture" :halign "center" :style "background-image: url('${IMAGE});")))
+  (box :class "profile_container" :orientation "v" :spacing 0 :space-evenly "false" :vexpand "false" :hexpand "false"
+    (box :class "profile_picture" :halign "center" :style "background-image: url('${IMAGE});")
+    (label :class "profile_kanji" :halign "center" :text "⻯")))
 
 (defwidget time [] 
 		(box :class "win" 
@@ -245,10 +245,10 @@
 				(box :class "sliders" :orientation "v" :spacing 25 :halign "center" :valign "center" :space-evenly "false" :vexpand "false" :hexpand "false"
 					(box :class "volume_bar" :orientation "h" :spacing 10 :space-evenly "false" :vexpand "false" :hexpand "true"
                             (scale :flipped "false" :orientation "h" :min 0 :max 101 :value volume_percent :onchange "pamixer --set-volume {}" )
-                            (label  :text "" :class "vol_icon"))
+                            (label  :text "󰕾" :class "vol_icon"))
 					(box :class "mic_bar" :orientation "h" :spacing 10 :space-evenly "false" :vexpand "false" :hexpand "false"
                             (scale :flipped "false" :orientation "h" :min 0 :max 101 :value mic_percent :active "true")
-                            (label  :text "" :class "mic_icon")))))
+                            (label  :text "󰍬" :class "mic_icon")))))
 
 (defwidget volume_osd_widget []
   (box
@@ -279,3 +279,6 @@
     ;;  :spacing 0
     ;;  :text "${volume_percent}%")
   ))
+
+(include "end.yuck")
+

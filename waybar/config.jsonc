@@ -39,7 +39,9 @@
         "custom/weather",
         "custom/clock",
         "custom/separator2",
-        "battery"
+        "battery",
+        "custom/separator",
+        "custom/end-history"
     ],
     "hyprland/workspaces": {
         "disable-scroll": true,
@@ -311,4 +313,9 @@
         "signal": 8,
         "return-type": "json"
     },
+    "custom/end-history": {
+        "format": "通",
+        "on-click": "~/.local/bin/end-rs history toggle",
+        "tooltip-format": "Notification History"
+    }
 }

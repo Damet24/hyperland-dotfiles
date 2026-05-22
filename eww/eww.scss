@@ -9,8 +9,9 @@
 tooltip.background {
   background-color: #0f0f17;
   font-size: 18;
-  border-radius: 10px;
+  border-radius: 6px;
   color: #bfc9db;
+  border: 1px solid #414868;
 }
 
 tooltip label {
@@ -19,12 +20,12 @@ tooltip label {
 
 .bg {
   background-color: #1a1b26;
-  border-radius: 20px;
+  border-radius: 12px;
 }
 
 .win {
   background-color: #24283b;
-  border-radius: 18px;
+  border-radius: 8px;
   padding: 10px 20px;
   margin: 10px;
 }
@@ -38,6 +39,14 @@ tooltip label {
   margin: 10px;
   border-radius: 50%;
   border: 2px solid #24283b;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.profile_kanji {
+  color: #414868;
+  font-size: 24px;
+  font-weight: bold;
+  margin: -5px 0px 0px 10px;
 }
 
 .profile_greeting {
@@ -93,18 +102,19 @@ tooltip label {
 // MUsic
 .music_card {
   background: #24283b;
-  border-radius: 12px;
+  border-radius: 8px;
   padding: 0;
   color: #a9b1d6;
   margin: 0 10px 0 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* COVER */
 .music_top {
-  border-radius: 12px 12px 0 0;
+  border-radius: 8px 8px 0 0;
   background-size: cover;
   background-position: center;
-  box-shadow: inset 0px 0px 15px 2px #000000;
+  box-shadow: inset 0px 0px 20px 3px #000000;
   padding: 10px;
   min-height: 110px;
 }
@@ -137,13 +147,14 @@ tooltip label {
   background: rgba(255, 255, 255, 0.06);
   border-radius: 999px;
 
-  min-width: 20px;
-  min-height: 20px;
+  min-width: 24px;
+  min-height: 24px;
 
-  font-size: 18px;
+  font-size: 20px;
   color: #c0caf5;
 
-  transition: 180ms ease;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .button_container {
@@ -154,6 +165,7 @@ tooltip label {
 .control_btn:hover {
   background: rgba(255, 255, 255, 0.14);
   color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 /* SLIDER */
@@ -175,6 +187,7 @@ tooltip label {
   border-radius: 999px;
   min-width: 12px;
   min-height: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 
@@ -184,10 +197,11 @@ tooltip label {
 // Audio panel
 .audio_panel {
   background-color: #24283b;
-  border-radius: 12px;
+  border-radius: 8px;
   padding: 0;
   color: #a9b1d6;
   margin: 0 10px 0 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .audio_panel trough {
@@ -213,6 +227,7 @@ tooltip label {
   border-radius: 999px;
   min-width: 12px;
   min-height: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .sliders {
@@ -228,9 +243,10 @@ tooltip label {
 
 // Osd's
 .osd {
-  background: rgba(26, 27, 38, 1.0);
-  border-radius: 4px;
+  background: #1a1b26;
+  border-radius: 6px;
   padding: 9px;
+  border: 1px solid #414868;
 }
 
 .osd_icon {
@@ -254,3 +270,5 @@ tooltip label {
   background: #bb9af7;
   border-radius: 4px;
 }
+
+@import "end.scss";

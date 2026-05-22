@@ -4,7 +4,6 @@ icon_dirs = [
     "/usr/share/pixmaps",
 ]
 icon_theme = "Adwaita"
-icon_size = 64
 eww_notification_window = "notification-frame"
 eww_notification_widget = "end-notification"
 eww_notification_var = "end-notifications"
@@ -15,13 +14,11 @@ eww_reply_window = "reply-frame"
 eww_reply_widget = "end-reply"
 eww_reply_var = "end-replies"
 eww_reply_text = "end-reply-text"
-eww_dnd_var = "end-dnd"
-persistent_dnd = false
-max_notifications = 10
+max_notifications = 7
 notification_orientation = "v"
-update_history = false
+update_history = true
 
 [timeout]
-low = 5
-normal = 10
+low = 3
+normal = 5
 critical = 0

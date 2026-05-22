@@ -15,6 +15,8 @@ hl.bind(mainMod .. " + Escape", hl.dsp.exec_cmd("hyprlock"))
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("hyprshot -m region"))
 hl.bind(mainMod .. " + SUPER_L", hl.dsp.exec_cmd("~/.config/eww/launch_left"))
 
+hl.bind(mainMod .. " + H", hl.dsp.exec_cmd("~/.local/bin/end-rs history toggle"))
+
 hl.bind(mainMod .. " + F", hl.dsp.exec_cmd(programs.fileManager))
 
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
