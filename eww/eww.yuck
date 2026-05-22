@@ -25,7 +25,7 @@
 (defpoll song_status :interval "1s"  "~/.config/eww/scripts/music_info --status")
 (defpoll loop_status :interval "1s"  "~/.config/eww/scripts/music_info --loop_ic")
 (defpoll song_time :interval "1s"  "~/.config/eww/scripts/music_info --time")
-(defpoll song_cover :interval "1s"  "~/.config/eww/scripts/music_info --spotify-cover")
+(defpoll song_cover :interval "1s"  "~/.config/eww/scripts/get_cover.sh")
 
 (defpoll battery :interval "15s" "./scripts/battery --bat")
 (defpoll memory :interval "15s" "scripts/memory")
@@ -59,6 +59,16 @@
              :y "12px")
   :stacking "fg"
   (main))
+
+(defwindow music_control
+  :geometry (geometry
+             :anchor "center bottom"
+             :width "380px"
+             :height "520px"
+             :x "0px"
+             :y "12px")
+  :stacking "fg"
+  (music))
 
 (defwidget main []
   (box
@@ -160,7 +170,7 @@
     ;; COVER
     (box
       :class "music_top"
-      :style (strcat "background-image: url('" song_cover "');")
+      :style "background-image: url('${song_cover}');"
       :orientation "v"
       :valign "end"
       :halign "fill"
