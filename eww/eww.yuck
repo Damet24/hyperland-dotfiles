@@ -1,4 +1,7 @@
 (defvar IMAGE "~/.config/eww/images/profile.jpeg")
+(defvar volume_visible false)
+(defvar mic_visible false)
+
 (defpoll username :interval "48h"  "whoami")
 
 (defpoll uptime :interval "50s" "uptime -p | sed -e 's/up //;s/ hours,/h/;s/ hour,/h/;s/ minutes/m/;s/ minute/m/'")
@@ -31,7 +34,6 @@
 (defpoll memory :interval "15s" "scripts/memory")
 (defpoll cpu :interval "17s" "scripts/cpu")
 
-
 (defpoll wifi_icon :interval "15s" "./scripts/wifi wifi")
 (defpoll wifi_col :interval "15s" "scripts/wifi wifi_col")
 (defpoll wifi_bg :interval "17s" "scripts/wifi wifi_bg")
@@ -45,10 +47,17 @@
 (defpoll vol_col :interval "15s" "scripts/vol vol_col")
 (defpoll vol_bg :interval "17s" "scripts/vol vol_bg")
 
-(defpoll volume_percent :interval "6s" "pamixer  --get-volume")
-(defpoll mic_percent :interval "6s" "amixer -D pulse sget Capture | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'")
-(defpoll brightness :interval "6s" "brightnessctl -m -d intel_backlight | awk -F, '{print substr($4, 0, length($4)-1)}' | tr -d '%'")
+(defpoll volume_percent
+  :interval "0.1s"
+  "wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{print int($2*100)}'")
 
+(defpoll volume_muted
+  :interval "0.1s"
+  "wpctl get-volume @DEFAULT_AUDIO_SINK@ | grep -q MUTED && echo true || echo false")
+
+(defpoll mic_percent
+  :interval "6s"
+  "sh -c \"pamixer --source \\$(pamixer --list-sources | grep 'alsa_input.*HyperX' | awk '{print \\$1}') --get-volume\"")
 
 (defwindow main
   :geometry (geometry
@@ -69,6 +78,19 @@
              :y "12px")
   :stacking "fg"
   (music))
+
+(defwindow volume_osd
+  :monitor 0
+  :geometry (geometry
+    :anchor "top center"
+    :x "0px"
+    :y "12px"
+    :width "220px"
+    :height "45px")
+  :stacking "overlay"
+  :focusable false
+  :exclusive false
+  (volume_osd_widget))
 
 (defwidget main []
   (box
@@ -223,5 +245,32 @@
                             (scale :flipped "false" :orientation "h" :min 0 :max 101 :value volume_percent :onchange "pamixer --set-volume {}" )
                             (label  :text "" :class "vol_icon"))
 					(box :class "mic_bar" :orientation "h" :spacing 10 :space-evenly "false" :vexpand "false" :hexpand "false"
-                            (scale :flipped "false" :orientation "h" :min 0 :max 101 :value mic_percent :active "false")
+                            (scale :flipped "false" :orientation "h" :min 0 :max 101 :value mic_percent :active "true")
                             (label  :text "" :class "mic_icon")))))
+
+(defwidget volume_osd_widget []
+  (box
+    :class "osd"
+    :orientation "h"
+    :spacing 0
+    :visible volume_visible
+
+    ;; (label
+    ;;   :class "osd_icon"
+    ;;   :spacing 0
+    ;;   :text {volume_muted == "true" ? "󰝟" : "󰕾"})
+
+    (scale
+      :class "osd_scale"
+      :spacing 0
+      :orientation "h"
+      :min 0
+      :max 100
+      :value volume_percent
+      :active false)
+
+    ;;(label
+    ;;  :class "osd_label"
+    ;;  :spacing 0
+    ;;  :text "${volume_percent}%")
+  ))
