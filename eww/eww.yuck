@@ -20,10 +20,10 @@
 (defpoll time_month_name :interval "48h"
       "date +\%B")
 
-(defpoll song :interval "3s"  "~/.config/eww/scripts/music_info --song")
-(defpoll song_artist :interval "3s"  "~/.config/eww/scripts/music_info --artist")
-(defpoll song_status :interval "3s"  "~/.config/eww/scripts/music_info --status")
-(defpoll loop_status :interval "5s"  "~/.config/eww/scripts/music_info --loop_ic")
+(defpoll song :interval "1s"  "~/.config/eww/scripts/music_info --song")
+(defpoll song_artist :interval "1s"  "~/.config/eww/scripts/music_info --artist")
+(defpoll song_status :interval "1s"  "~/.config/eww/scripts/music_info --status")
+(defpoll loop_status :interval "1s"  "~/.config/eww/scripts/music_info --loop_ic")
 (defpoll song_time :interval "1s"  "~/.config/eww/scripts/music_info --time")
 
 (defpoll battery :interval "15s" "./scripts/battery --bat")
