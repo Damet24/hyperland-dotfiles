@@ -1,3 +1,5 @@
+@import "colors";
+
 * {
   all: unset;
   font-family: feather;
@@ -7,11 +9,11 @@
 
 /** tooltip!! **/
 tooltip.background {
-  background-color: #0f0f17;
+  background-color: $tooltip-bg;
   font-size: 18;
   border-radius: 6px;
-  color: #bfc9db;
-  border: 1px solid #414868;
+  color: $tooltip-fg;
+  border: 1px solid $accent;
 }
 
 tooltip label {
@@ -19,12 +21,12 @@ tooltip label {
 }
 
 .bg {
-  background-color: #1a1b26;
+  background-color: $bg;
   border-radius: 12px;
 }
 
 .win {
-  background-color: #24283b;
+  background-color: $muted;
   border-radius: 8px;
   padding: 10px 20px;
   margin: 10px;
@@ -38,26 +40,26 @@ tooltip label {
   min-width: 90px;
   margin: 10px;
   border-radius: 50%;
-  border: 2px solid #24283b;
+  border: 2px solid $muted;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .profile_kanji {
-  color: #414868;
+  color: $accent;
   font-size: 24px;
   font-weight: bold;
   margin: -5px 0px 0px 10px;
 }
 
 .profile_greeting {
-  color: #b5e8e0;
+  color: $greeting;
   font-size: 18px;
   font-weight: normal;
   margin: 0px 0px 0px 10px;
 }
 
 .profile_username {
-  color: #a1bdce;
+  color: $username;
   font-size: 36px;
   font-weight: bold;
   margin: -15px 0px 0px 0px;
@@ -65,46 +67,46 @@ tooltip label {
 
 //  TIME
 .hour_class {
-  color: #bec8da;
+  color: $time-fg;
   font-size: 45px;
   font-weight: bold;
   margin: 0px 0px 0px 20px;
 }
 
 .minute_class {
-  color: #bec8da;
+  color: $time-fg;
   font-size: 45px;
   margin: 0px 10px 0px 20px;
 }
 
 .time_sep_class {
-  color: #565f89;
+  color: $comment;
   font-size: 18px;
 }
 
 .time_day_class_n {
-  color: #565f89;
+  color: $comment;
   font-size: 18px;
   margin: 0px 10px 0px 0px;
 }
 
 .day_class_n {
-  color: #565f89;
+  color: $comment;
   font-size: 18px;
 }
 
 .month_class_n {
-  color: #565f89;
+  color: $comment;
   font-size: 18px;
 }
 
 
 // MUsic
 .music_card {
-  background: #24283b;
+  background: $muted;
   border-radius: 8px;
   padding: 0;
-  color: #a9b1d6;
+  color: $fg;
   margin: 0 10px 0 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
@@ -114,7 +116,7 @@ tooltip label {
   border-radius: 8px 8px 0 0;
   background-size: cover;
   background-position: center;
-  box-shadow: inset 0px 0px 20px 3px #000000;
+  box-shadow: inset 0px 0px 20px 3px $black;
   padding: 10px;
   min-height: 110px;
 }
@@ -123,12 +125,12 @@ tooltip label {
 .song_title {
   font-size: 20px;
   font-weight: 700;
-  color: #c0caf5;
+  color: $white;
 }
 
 .song_artist {
   font-size: 14px;
-  color: #c0caf5;
+  color: $white;
   margin-top: 4px;
 }
 
@@ -151,7 +153,7 @@ tooltip label {
   min-height: 24px;
 
   font-size: 20px;
-  color: #c0caf5;
+  color: $white;
 
   transition: all 0.2s ease-in-out;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -173,17 +175,17 @@ tooltip label {
   min-height: 4px;
   min-width: 300px;
 
-  background: #414868;
+  background: $accent;
   border-radius: 999px;
 }
 
 .music_progress highlight {
-  background: #bb9af7;
+  background: $gold;
   border-radius: 999px;
 }
 
 .music_progress slider {
-  background: #ffffff;
+  background: $slider-handle;
   border-radius: 999px;
   min-width: 12px;
   min-height: 6px;
@@ -196,10 +198,10 @@ tooltip label {
 
 // Audio panel
 .audio_panel {
-  background-color: #24283b;
+  background-color: $muted;
   border-radius: 8px;
   padding: 0;
-  color: #a9b1d6;
+  color: $fg;
   margin: 0 10px 0 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
@@ -208,22 +210,22 @@ tooltip label {
   min-height: 4px;
   min-width: 300px;
 
-  background: #414868;
+  background: $accent;
   border-radius: 999px;
 }
 
 .volume_bar highlight {
-  background: #f7768e;
+  background: $red;
   border-radius: 999px;
 }
 
 .mic_bar highlight {
-  background: #9ece6a;
+  background: $green;
   border-radius: 999px;
 }
 
 .audio_panel slider {
-  background: #ffffff;
+  background: $slider-handle;
   border-radius: 999px;
   min-width: 12px;
   min-height: 6px;
@@ -243,31 +245,31 @@ tooltip label {
 
 // Osd's
 .osd {
-  background: #1a1b26;
+  background: $bg;
   border-radius: 6px;
   padding: 9px;
-  border: 1px solid #414868;
+  border: 1px solid $accent;
 }
 
 .osd_icon {
   font-size: 20px;
-  color: #89b4fa;
+  color: $osd-icon;
 }
 
 .osd_label {
   font-size: 16px;
   font-weight: bold;
-  color: #c0caf5;
+  color: $white;
 }
 
 .osd_scale trough {
   min-height: 10px;
   border-radius: 4px;
-  background: #24283b;
+  background: $muted;
 }
 
 .osd_scale highlight {
-  background: #bb9af7;
+  background: $gold;
   border-radius: 4px;
 }
 
